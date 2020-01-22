@@ -1,22 +1,28 @@
 const Sequelize = require("sequelize");
 const db = require("../config/database");
 
-const Gig = db.define("gig", {
-  title: {
+const Client = db.define("client", {
+  name: {
     type: Sequelize.STRING
   },
-  technologies: {
+  eyelash_length: {
     type: Sequelize.STRING
   },
-  description: {
+  eyelash_type: {
     type: Sequelize.STRING
   },
-  budget: {
+  price_per_fill: {
     type: Sequelize.STRING
   },
-  contact_email: {
+  price_per_full: {
+    type: Sequelize.STRING
+  },
+  phone_number: {
+    type: Sequelize.NUMBER
+  },
+  email: {
     type: Sequelize.STRING
   }
 });
 
-module.exports = Gig;
+module.exports = Client;
