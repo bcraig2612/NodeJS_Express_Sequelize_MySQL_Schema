@@ -1,37 +1,33 @@
 const express = require("express");
+const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
-// *Cross Origin Resource Sharing*
-const cors = require("cors");
+const path = require("path");
+
+// Database
+const db = require("./config/database");
+
+// Test DB
+db.authenticate()
+  .then(() => console.log("Database connected..."))
+  .catch(err => console.log("Error: " + err));
 
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:3002"
-};
+// Handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
-app.use(cors(corsOptions));
+// Body Parser
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// parse requests of content-type - application/json
-app.use(bodyParser.json());
+// Set static folder
+app.use(express.static(path.join(__dirname, "public")));
 
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+// Index route
+app.get("/", (req, res) => res.render("index", { layout: "landing" }));
 
-const db = require("./app/models");
-
-db.sequelize.sync();
-
-// drop the table if it already exists
-// db.sequelize.sync({ force: true }).then(() => {
-//   console.log("Drop and re-sync db.");
-// });
-
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to my personal project application." });
-});
-
-require("./app/routes/tutorial.routes")(app);
+// Gig routes
+app.use("/gigs", require("./routes/gigs"));
 
 // set port, listen for requests
 const PORT = process.env.PORT || 3001;
