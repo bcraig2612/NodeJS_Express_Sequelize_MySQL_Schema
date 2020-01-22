@@ -69,10 +69,8 @@ router.post("/add", (req, res) => {
     });
   } else {
     if (!price_per_fill) {
-      price_per_fill = "Unknown";
-    } else {
-      price_per_fill = `$${price_per_fill}`;
-    }
+      price_per_fill = "0";
+    };
 
     // Make lowercase and remove space after comma
     name = name.toLowerCase();
@@ -92,7 +90,7 @@ router.post("/add", (req, res) => {
   }
 });
 
-// Search for gigs
+// Search for clients
 router.get("/search", (req, res) => {
   let { term } = req.query;
 

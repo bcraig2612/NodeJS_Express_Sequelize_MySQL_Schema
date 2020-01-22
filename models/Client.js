@@ -12,13 +12,13 @@ const Client = db.define("client", {
     type: Sequelize.STRING
   },
   price_per_fill: {
-    type: Sequelize.STRING
+    type: Sequelize.INTEGER
   },
   price_per_full: {
-    type: Sequelize.STRING
+    type: Sequelize.INTEGER
   },
   phone_number: {
-    type: Sequelize.NUMBER
+    type: Sequelize.STRING
   },
   email: {
     type: Sequelize.STRING

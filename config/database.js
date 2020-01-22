@@ -3,6 +3,9 @@ const Sequelize = require("sequelize");
 module.exports = new Sequelize("lashes_with_kayy", "root", "Kblair_2612", {
   host: "localhost",
   dialect: "mysql",
+  define: {
+    timestamps: false
+  },
   operatorsAliases: false,
   pool: {
     max: 5,
