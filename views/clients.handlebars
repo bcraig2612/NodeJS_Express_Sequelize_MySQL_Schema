@@ -3,14 +3,16 @@
 
     {{#each clients}}
     <div class="client">
-        <h3>{{title}}</h3>
-        <p>{{description}}</p>
+        <h3>{{name}}</h3>
+        <p>{{eyelash_length}}</p>
+        <p>{{eyelash_type}}</p>
         <ul>
-            <li>Budget: {{budget}}</li>
+            <li>Contact Number: {{phone_number}}</li>
             <li><a href="mailto:{{contact_email}}" class="btn btn-reverse">Contact Now</a></li>
         </ul>
-        <div class="tech">
-            <small>Technologies Needed: <span>{{technologies}}</span></small>
+        <div class="pricing">
+            <small>Price for Half Set: <span>{{price_per_fill}}</span></small>
+            <small>Price for Full Set: <span>{{price_per_full}}</span></small>
         </div>
     </div>
     {{else}}

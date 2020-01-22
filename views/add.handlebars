@@ -9,31 +9,43 @@
         {{/each}}
         <form action="/clients/add" method="POST">
             <div class="input-group">
-                <label for="title">Client Name</label>
-                <input type="text" name="title" id="title" class="input-box"
-                    placeholder="eg. Small Wordpress website, React developer" maxlength="100" value={{title}}>
+                <label for="name">Client's Name:</label>
+                <input type="text" name="name" id="name" class="input-box" placeholder="Type the Client's Name Here"
+                    maxlength="100" value={{name}} />
             </div>
             <div class="input-group">
-                <label for="technologies">Technologies Needed</label>
-                <input type="text" name="technologies" id="technologies" class="input-box"
-                    placeholder="eg. javascript, react, PHP" maxlength="100" value={{technologies}}>
+                <label for="eyelash_length">Length of Eye Lashes:</label>
+                <input type="text" name="eyelash_length" id="eyelash_length" class="input-box"
+                    placeholder="Type In The Length of Eyelashes Used For This Client" maxlength="100"
+                    value={{eyelash_length}} />
             </div>
             <div class="input-group">
-                <label for="budget">Budget (Leave blank for unknown)</label>
-                <input type="number" name="budget" id="budget" class="input-box" placeholder="eg. 500, 5000, 10000"
-                    value={{budget}}>
+                <label for="eyelash_type">Type of Eye Lashes:</label>
+                <input type="text" name="eyelash_type" id="eyelash_type" class="input-box"
+                    placeholder="Enter In The Type of Eyelashes Used For This Client" maxlength="100"
+                    value={{eyelash_type}} />
             </div>
             <div class="input-group">
-                <label for="description">Gig Description</label>
-                <textarea name="description" id="description" class="input-box"
-                    placeholder="Describe the details of the gig" rows="10">{{description}}</textarea>
+                <label for="price_per_fill">Price For Half Set:</label>
+                <input type="number" name="price_per_fill" id="price_per_fill" class="input-box"
+                    placeholder="Add The Price For Half Set" value={{price_per_fill}} />
             </div>
             <div class="input-group">
-                <label for="budget">Contact Email</label>
-                <input type="email" name="contact_email" id="contactemail" class="input-box"
-                    placeholder="Enter an email" value={{contact_email}}>
+                <label for="price_per_full">Price For Full Set:</label>
+                <input type="number" name="price_per_full" id="price_per_full" class="input-box"
+                    placeholder="Add The Price For Full Set" value={{price_per_full}} />
             </div>
-            <input type="submit" value="Add Gig" class="btn btn-reverse">
+            <div class="input-group">
+                <label for="phone_number">Phone Number:</label>
+                <input type="number" name="phone_number" id="phone_number" class="input-box"
+                    placeholder="Enter The Client's Phone Number" value={{phone_number}} />
+            </div>
+            <div class="input-group">
+                <label for="email">Email Address:</label>
+                <input type="email" name="email" id="email" class="input-box"
+                    placeholder="Enter The Client's Email Address" value={{email}} />
+            </div>
+            <input type="submit" value="Add Client" class="btn btn-reverse" />
         </form>
     </div>
 </section>

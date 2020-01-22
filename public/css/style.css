@@ -160,8 +160,8 @@ input[type="search"] {
   flex-basis: 600px;
 }
 
-/* Gigs */
-.gig {
+/* Clients */
+.client {
   background: var(--bg-color);
   border-bottom: 4px solid var(--primary-color);
   color: #fff;
@@ -170,17 +170,20 @@ input[type="search"] {
   box-shadow: var(--box-shadow);
 }
 
-.gig ul {
+.client ul {
   list-style: none;
   display: flex;
 }
 
-.gig li {
+.client li {
   margin-right: 0.5rem;
   padding: 0.6rem;
 }
 
-.gig .tech span {
+.client .price_per_fill span {
+  color: var(--primary-color);
+}
+.client .price_per_full span {
   color: var(--primary-color);
 }
 
@@ -253,11 +256,11 @@ label {
     padding: 2.3rem;
   }
 
-  .gig ul {
+  .client ul {
     flex-direction: column;
   }
 
-  .gig .btn {
+  .client .btn {
     display: block;
     margin-top: 1rem;
     text-align: center;
